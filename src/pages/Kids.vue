@@ -13,16 +13,23 @@
       </svg>
       <span>Добавить ребенка</span>
     </Button>
+    <Paragraph size="16" tag="p" weight="medium" color="black">Персональные данные</Paragraph>
+    <Paragraph size="16" tag="p" weight="medium" color="black">Дети (макс. 5)</Paragraph>
+    <Paragraph size="13" tag="p" weight="regular" color="str-black">all rights reserved</Paragraph>
+    <Paragraph size="16" tag="p" weight="bold" color="black">Василий, 30 лет</Paragraph>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Button from "@/components/ui/Button";
 import Header from "@/components/Heder";
+import Paragraph from "@/components/ui/Paragraph";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'Kids',
-  components: {Header, Button},
+  components: {Footer, Paragraph, Header, Button},
 
   data() {
     return {}
@@ -39,6 +46,7 @@ export default {
   align-items: center;
   gap: 20px;
   flex-direction: column;
+  font-family: var(--font-montseratt);
 }
 
 </style>

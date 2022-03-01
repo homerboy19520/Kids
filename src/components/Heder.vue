@@ -87,6 +87,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  margin-bottom: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
