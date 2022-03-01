@@ -1,0 +1,111 @@
+<template>
+  <div class="button" :class="[`m-${modifier}`]" @click="click">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'Button',
+
+  data() {
+    return {}
+  },
+
+  props: {
+    modifier: String,
+    default: null,
+  },
+
+  methods: {
+    click() {
+      this.$emit("click")
+    }
+  }
+
+}
+</script>
+
+<style lang="scss" scoped>
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.m-text {
+    font-family: var(--font-montseratt);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-grey);
+    transition: opacity .2s ease-out;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  &.m-primary {
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: var(--color-blue);
+    border: 1px solid transparent;
+    font-family: var(--font-montseratt);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-white);
+    font-weight: 400;
+    transition: border-color .2s ease-out, background-color .2s ease-out, color .2s ease-out;
+
+    &:hover {
+      border-color: var(--color-blue);
+      background-color: transparent;
+      color: var(--color-blue);
+    }
+  }
+
+  &.m-secondary {
+    display: flex;
+    gap: 4px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-blue);
+    font-family: var(--font-montseratt);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-blue);
+    font-weight: 400;
+    transition: border-color .2s ease-out, background-color .2s ease-out, color .2s ease-out;
+
+    & svg path {
+      transition: fill .2s ease-out;
+    }
+
+    &:hover {
+      border-color: transparent;
+      background-color: var(--color-blue);
+      color: var(--color-white);
+
+      svg path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &.m-delete {
+    font-family: var(--font-montseratt);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-blue);
+    transition: opacity .2s ease-out;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+}
+
+</style>

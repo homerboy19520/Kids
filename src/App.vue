@@ -1,17 +1,17 @@
 <template>
   <div class="app">
-    <Page></Page>
+    <Kids></Kids>
   </div>
 </template>
 
 <script>
-import Page from "@/pages/Page";
+import Kids from "@/pages/Kids";
 
 export default {
   name: 'App',
 
   components: {
-    Page
+    Kids
   }
 }
 </script>
