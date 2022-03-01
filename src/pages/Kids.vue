@@ -1,5 +1,6 @@
 <template>
   <div class="kids">
+    <Header></Header>
     <Button modifier="text">Форма</Button>
     <Button modifier="text">Превью</Button>
     <Button modifier="delete">Удалить</Button>
@@ -12,16 +13,16 @@
       </svg>
       <span>Добавить ребенка</span>
     </Button>
-
   </div>
 </template>
 
 <script>
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
+import Header from "@/components/Heder";
 
 export default {
   name: 'Kids',
-  components: {Button},
+  components: {Header, Button},
 
   data() {
     return {}
@@ -37,6 +38,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-direction: column;
 }
 
 </style>
