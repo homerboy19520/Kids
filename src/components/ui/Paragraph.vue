@@ -3,12 +3,12 @@ export default {
   name: 'Paragraph',
   props: {
     size: {
-      type: Number,
-      default: 14
+      type: String,
+      default: "14"
     },
     weight: {
-      type: Number,
-      default: 400
+      type: String,
+      default: "regular"
     },
     color: {
       type: String,

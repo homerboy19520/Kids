@@ -13,10 +13,12 @@
       </svg>
       <span>Добавить ребенка</span>
     </Button>
-    <Paragraph size="16" tag="p" weight="medium" color="black">Персональные данные</Paragraph>
-    <Paragraph size="16" tag="p" weight="medium" color="black">Дети (макс. 5)</Paragraph>
-    <Paragraph size="13" tag="p" weight="regular" color="str-black">all rights reserved</Paragraph>
-    <Paragraph size="16" tag="p" weight="bold" color="black">Василий, 30 лет</Paragraph>
+    <Paragraph size=16 tag="p" weight="medium" color="black">Персональные данные</Paragraph>
+    <Paragraph size=16 tag="p" weight="medium" color="black">Дети (макс. 5)</Paragraph>
+    <Paragraph size=13 tag="p" weight="regular" color="str-black">all rights reserved</Paragraph>
+    <Paragraph size=16 tag="p" weight="bold" color="black">Василий, 30 лет</Paragraph>
+    <Input @oninput="saveData" modifier="form" placeholder="Имя"></Input>
+    <Input @oninput="saveData" modifier="form" placeholder="Возраст"></Input>
     <Footer></Footer>
   </div>
 </template>
@@ -26,14 +28,21 @@ import Button from "@/components/ui/Button";
 import Header from "@/components/Heder";
 import Paragraph from "@/components/ui/Paragraph";
 import Footer from "@/components/Footer";
+import Input from "@/components/ui/Input";
 
 export default {
   name: 'Kids',
-  components: {Footer, Paragraph, Header, Button},
+  components: {Footer, Paragraph, Header, Button, Input},
 
   data() {
     return {}
   },
+
+  methods: {
+    saveData() {
+      console.log("function save the data")
+    }
+  }
 
 }
 </script>
