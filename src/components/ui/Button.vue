@@ -46,6 +46,7 @@ export default {
   }
 
   &.m-primary {
+    width: fit-content;
     padding: 10px 20px;
     border-radius: 100px;
     background-color: var(--color-blue);
@@ -65,6 +66,7 @@ export default {
   }
 
   &.m-secondary {
+    width: fit-content;
     display: flex;
     gap: 4px;
     padding: 10px 20px;

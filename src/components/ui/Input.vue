@@ -82,10 +82,11 @@ export default {
 
 .input-block {
   position: relative;
+  width: 100%;
 
 
   & input {
-    width: 350px;
+    width: 100%;
     outline: none;
     padding: 26px 16px 6px 16px;
     border: 1px solid #F1F1F1;
