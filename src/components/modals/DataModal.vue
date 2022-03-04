@@ -5,7 +5,7 @@
       >Персональные данные
       </Paragraph>
       <Paragraph size="16" tag="p" weight="bold" color="black"
-      >{{ user.name }}, {{ user.age }} {{ years }}
+      >{{ user.name }}, {{ user.age }} {{ years(user) }}
       </Paragraph>
     </div>
     <div class="data-modal__list">
@@ -13,7 +13,7 @@
       </Paragraph>
       <div class="data-modal__item" v-for="(item,index) in preview" :key="index">
         <Paragraph size="16" tag="p" weight="bold" color="black"
-        >{{ item.name }}, {{ item.age }}
+        >{{ item.name }}, {{ item.age }}, {{ years(item) }}
         </Paragraph>
       </div>
     </div>
@@ -28,17 +28,16 @@ export default {
   name: "DataModal",
 
   components: {
+
     Paragraph,
   },
 
-  computed: {
-    ...mapState({preview: "preview", user: "user", isShow: "isOpen"}),
-
-    years() {
-      let mass = this.user.age.split("")
+  methods: {
+    years(item) {
+      let mass = item.age.split("")
       let lastNumber = mass[mass.length - 1];
 
-      if (lastNumber === "1") {
+      if (lastNumber === "1" && item.age !== "11") {
         return "год"
       } else if (lastNumber === "2" || lastNumber === "3" || lastNumber === "4") {
         return "года"
@@ -46,6 +45,10 @@ export default {
         return "лет"
       }
     }
+  },
+
+  computed: {
+    ...mapState({preview: "preview", user: "user", isShow: "isOpen"}),
   },
 };
 </script>
