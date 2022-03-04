@@ -13,7 +13,7 @@
       </Paragraph>
       <div class="data-modal__item" v-for="(item,index) in preview" :key="index">
         <Paragraph size="16" tag="p" weight="bold" color="black"
-        >{{ item.name }}, {{ item.age }}, {{ years(item) }}
+        >{{ item.name }}, {{ item.age }} {{ years(item) }}
         </Paragraph>
       </div>
     </div>
