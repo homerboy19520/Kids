@@ -10,7 +10,7 @@
 import DataModal from "@/components/modals/DataModal";
 
 export default {
-  name: 'Preview',
+  name: 'PreviewPage',
   components: {DataModal},
   data() {
     return {}

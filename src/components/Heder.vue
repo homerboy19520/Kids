@@ -1,15 +1,15 @@
 <template>
-  <div class="header">
+  <header class="header">
     <img class="header__logo" alt="logo" :src="Logo">
-    <div class="header__wrapper">
+    <nav class="header__nav">
       <router-link to="/">
         <Button modifier="text">Форма</Button>
       </router-link>
       <router-link to="/preview">
         <Button modifier="text">Превью</Button>
       </router-link>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -34,20 +34,19 @@ export default {
 <style lang="scss" scoped>
 .header {
   box-sizing: border-box;
-  border: 1px solid transparent;
-  border-bottom-color: #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
   margin-bottom: auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
   padding: 28px 92px 25px 92px;
-  
+
   @media (max-width: 560px) {
     padding: 28px;
   }
 
-  &__wrapper {
+  &__nav {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,12 +1,12 @@
 <template>
   <div class="form">
     <div class="form__wrapper">
-      <InputModal
+      <FormModal
           :inputValue="value"
           v-if="isOpen"
           @age="setAge"
           @name="setName"
-      ></InputModal>
+      ></FormModal>
       <CardsModal :isAdd="isFull" @click="openInputs" :isShow="isOpen"></CardsModal>
       <div v-if="isOpen" class="form__list">
         <div class="form__item" v-for="(item, index) in allCards" :key="index">
@@ -24,14 +24,15 @@
 import CardsModal from "@/components/modals/CardsModal";
 import Button from "@/components/ui/Button.vue";
 import KidCard from "@/components/ui/KidCard";
+import FormModal from "@/components/modals/FormModal";
+
 
 import {mapMutations, mapState} from "vuex";
 import {mapGetters} from "vuex";
-import InputModal from "@/components/modals/InputModal";
 
 export default {
-  name: "Form",
-  components: {InputModal, KidCard, CardsModal, Button},
+  name: "FormPage",
+  components: {FormModal, KidCard, CardsModal, Button},
 
   data() {
     return {

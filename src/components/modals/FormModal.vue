@@ -1,9 +1,9 @@
 <template>
-  <div class="input-modal">
+  <form class="form">
     <Paragraph size=16 tag="p" weight="medium" color="black">Персональные данные</Paragraph>
-    <Input :value="inputValue.name" @oninput="name" placeholder="Имя"></Input>
-    <Input :value="inputValue.age" @oninput="age" modifier="number" placeholder="Возраст"></Input>
-  </div>
+    <Input :value="inputValue.name" @oninput="setName" placeholder="Имя"></Input>
+    <Input :value="inputValue.age" @oninput="setAge" modifier="number" placeholder="Возраст"></Input>
+  </form>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import Paragraph from "@/components/ui/Paragraph.vue";
 import Input from "@/components/ui/Input.vue";
 
 export default {
-  name: 'InputModal',
+  name: 'FormModal',
 
   props: {
     inputValue: {
@@ -25,11 +25,11 @@ export default {
   },
 
   methods: {
-    name(value) {
+    setName(value) {
       this.$emit("name", value)
     },
 
-    age(value) {
+    setAge(value) {
       this.$emit("age", value)
     }
   }
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.input-modal {
+.form {
   margin-bottom: 33px;
 
   p {

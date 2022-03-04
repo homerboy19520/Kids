@@ -1,9 +1,11 @@
 <template>
   <div class="app">
     <Header></Header>
-    <main>
-      <router-view></router-view>
-    </main>
+    <article>
+      <main>
+        <router-view></router-view>
+      </main>
+    </article>
     <Footer></Footer>
   </div>
 </template>
@@ -27,10 +29,11 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
-main {
+article {
   position: relative;
   flex: 1 0 auto;
   padding: 30px;

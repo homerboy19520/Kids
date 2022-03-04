@@ -1,6 +1,6 @@
 import VueRouter from "vue-router";
-import Form from "@/pages/Form";
-import Preview from "@/pages/Preview";
+import Form from "@/pages/FormPage";
+import Preview from "@/pages/PreviewPage";
 
 export default new VueRouter({
   mode: "history",

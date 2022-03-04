@@ -5,7 +5,7 @@
       >Персональные данные
       </Paragraph>
       <Paragraph size="16" tag="p" weight="bold" color="black"
-      >{{ user.name }}, {{ user.age }} лет
+      >{{ user.name }}, {{ user.age }} {{ years }}
       </Paragraph>
     </div>
     <div class="data-modal__list">
@@ -31,12 +31,21 @@ export default {
     Paragraph,
   },
 
-  methods: {},
-  mounted() {
-  },
-
   computed: {
     ...mapState({preview: "preview", user: "user", isShow: "isOpen"}),
+
+    years() {
+      let mass = this.user.age.split("")
+      let lastNumber = mass[mass.length - 1];
+
+      if (lastNumber === "1") {
+        return "год"
+      } else if (lastNumber === "2" || lastNumber === "3" || lastNumber === "4") {
+        return "года"
+      } else {
+        return "лет"
+      }
+    }
   },
 };
 </script>

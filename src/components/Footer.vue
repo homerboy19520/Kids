@@ -1,7 +1,7 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <Paragraph size="13" tag="p" weight="regular" color="str-black">all rights reserved</Paragraph>
-  </div>
+  </footer>
 </template>
 
 <script>
