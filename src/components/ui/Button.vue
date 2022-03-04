@@ -1,7 +1,7 @@
 <template>
-  <div class="button" :class="[`m-${modifier}`]" @click="click">
+  <button class="button" :class="[`m-${modifier}`]" @click="click">
     <slot></slot>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -31,6 +31,8 @@ export default {
 .button {
   box-sizing: border-box;
   cursor: pointer;
+  padding: 0;
+
 
   &.m-text {
     font-family: var(--font-montseratt);
@@ -39,6 +41,8 @@ export default {
     line-height: 24px;
     color: var(--color-grey);
     transition: opacity .2s ease-out;
+    background-color: transparent;
+    border: none;
 
     &:hover {
       opacity: .6;
@@ -63,6 +67,12 @@ export default {
       background-color: transparent;
       color: var(--color-blue);
     }
+
+    @media (max-width: 560px) {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
   }
 
   &.m-secondary {
@@ -93,6 +103,11 @@ export default {
         fill: var(--color-white);
       }
     }
+
+    @media (max-width: 560px) {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
   }
 
   &.m-delete {
@@ -102,9 +117,15 @@ export default {
     line-height: 24px;
     color: var(--color-blue);
     transition: opacity .2s ease-out;
+    background-color: transparent;
+    border: none;
 
     &:hover {
       opacity: .6;
+    }
+
+    @media (max-width: 560px) {
+      padding: 10px 50px;
     }
   }
 

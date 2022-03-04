@@ -29,5 +29,6 @@ export default {
   padding: 20px 0;
   background: #FAFAFA;
   box-shadow: 0 1px 0 rgba(17, 17, 17, 0.1);
+  font-family: var(--font-montseratt);
 }
 </style>

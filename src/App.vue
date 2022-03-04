@@ -1,15 +1,46 @@
 <template>
   <div class="app">
+    <Header></Header>
+    <main>
+      <router-view></router-view>
+    </main>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Header from "@/components/Heder";
+import Footer from "@/components/Footer";
 
 export default {
-  name: 'App',
-}
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss">
 @import "assets/styles/styles.css";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+  flex: 1 0 auto;
+  padding: 30px;
+
+  @media (max-width: 560px) {
+    padding: 20px;
+  }
+}
+
+footer {
+  flex: 0 0 auto;
+}
 </style>

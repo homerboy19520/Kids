@@ -1,95 +1,68 @@
 <template>
-  <div class="input-block" :class="[`m-${modifier}}`]">
-    <input required :value="localValue" @input="input($event.target.value)">
+  <div class="input-block">
+    <input :type="modifier" required :value="localValue" @input="input($event.target.value)">
     <span class="placeholder">
-    {{ placeholder }}
-  </span>
+      {{ placeholder }}
+    </span>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Input',
+  name: "Input",
 
   props: {
     placeholder: {
       type: String,
-      default: ""
+      default: "",
     },
     modifier: {
       type: String,
-      default: ""
+      default: "",
     },
     value: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
-
   data() {
     return {
-      localValue: ""
-    }
+      localValue: "",
+    };
   },
-
   methods: {
     input(value) {
       this.localValue = value;
     },
   },
-
   mounted() {
     this.localValue = this.value;
   },
-
   watch: {
     localValue() {
-      this.$emit("oninput", this.localValue)
-    }
+      this.$emit("oninput", this.localValue);
+    },
 
-  }
-
-}
+    value() {
+      if (this.value.length > 15) {
+        this.value = this.value.slice(0, 15)
+      }
+      this.localValue = this.value;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-.input {
-  outline: none;
-  width: 30%;
-  padding: 26px 16px 6px 16px;
-  border: 1px solid #F1F1F1;;
-  border-radius: 4px;
-
-  font-family: var(--font-montseratt);
-  font-weight: 400;
-  color: var(--color-black);
-  font-size: 14px;
-  line-height: 24px;
-
-  &::placeholder {
-    font-family: var(--font-montseratt);
-    font-weight: 400;
-    color: var(--color-grey);
-    font-size: 13px;
-    line-height: 16px;
-  }
-
-  &:focus::placeholder {
-    padding-bottom: 10px;
-  }
-}
-
 .input-block {
   position: relative;
   width: 100%;
 
-
   & input {
     width: 100%;
     outline: none;
-    padding: 26px 16px 6px 16px;
-    border: 1px solid #F1F1F1;
+    padding: 24px 16px 6px 16px;
+    border: 1px solid #f1f1f1;
     border-radius: 4px;
     font-family: var(--font-montseratt);
     font-weight: 400;
@@ -105,13 +78,19 @@ export default {
     }
 
     &:focus {
-      color: #284B63;
-      border-color: #284B63;
+      color: #284b63;
+      border-color: #284b63;
     }
 
     &:focus + span.placeholder {
-      color: #284B63;
+      color: #284b63;
     }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
   }
 
   & .placeholder {
@@ -133,5 +112,4 @@ export default {
     line-height: 16px;
   }
 }
-
 </style>
