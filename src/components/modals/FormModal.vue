@@ -43,6 +43,7 @@ export default {
 
   p {
     margin-bottom: 20px;
+    user-select: none;
   }
 
   div {

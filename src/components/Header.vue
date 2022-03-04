@@ -1,6 +1,8 @@
 <template>
   <header class="header">
-    <img class="header__logo" alt="logo" :src="Logo">
+    <router-link to="/">
+      <img class="header__logo" alt="logo" :src="Logo">
+    </router-link>
     <nav class="header__nav">
       <router-link to="/">
         <Button modifier="text">Форма</Button>

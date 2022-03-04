@@ -85,6 +85,7 @@ export default {
 
   &__title {
     margin-bottom: 20px;
+    user-select: none;
   }
 }
 </style>

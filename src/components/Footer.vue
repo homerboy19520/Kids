@@ -30,5 +30,6 @@ export default {
   background: #FAFAFA;
   box-shadow: 0 1px 0 rgba(17, 17, 17, 0.1);
   font-family: var(--font-montseratt);
+  user-select: none;
 }
 </style>

@@ -71,6 +71,7 @@ export default {
     @media (max-width: 560px) {
       padding: 5px 10px;
       font-size: 12px;
+      width: 100%;
     }
 
   }
